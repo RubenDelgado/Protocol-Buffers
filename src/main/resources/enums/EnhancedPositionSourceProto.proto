@@ -1,0 +1,9 @@
+
+// Enhanced position source (used in event header for enhanced positions)
+enum EnhancedPositionSource {
+	// Open Street Map
+	ENHANCED_POSITION_SOURCE_OPEN_STREET_MAP = 0;
+
+	// Google Maps
+	ENHANCED_POSITION_SOURCE_GOOGLE_MAPS = 1;
+}

@@ -1,0 +1,15 @@
+
+// Speed is determined by
+enum TripSpeedSource {
+	// Not supported
+	TRIP_SPEED_SOURCE_NOT_SUPPORTED = 0x00000000;
+
+	// Speed is determined by speed sensor
+	TRIP_SPEED_SOURCE_SPEED_SENSOR = 0x00000001;
+
+	// Speed is determined by GPS speed.
+	TRIP_SPEED_SOURCE_GPS  = 0x00000002;
+
+	// Speed is determined by CAN bus
+	TRIP_SPEED_SOURCE_CANBUS  = 0x00000004;
+}

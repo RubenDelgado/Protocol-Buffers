@@ -1,0 +1,55 @@
+syntax = "proto2";
+
+
+
+message UnitControlRequest {
+    repeated UnitControlRequestOutput Output = 1;
+    repeated UnitControlRequestDisable Disable = 2;
+    repeated UnitControlRequestPoll Poll = 3;
+    repeated UnitControlRequestCanDataPoll CanDataPoll = 4;
+    repeated UnitControlRequestExecuteProfile ExecuteProfile = 5;
+    repeated UnitControlRequestActiveRecovery ActiveRecovery = 6;
+    optional string UnitId = 7;
+}
+message UnitControlRequestActiveRecovery {
+    optional stateType State = 1 [default = On];
+}
+message UnitControlRequestCanDataPoll {
+}
+message UnitControlRequestDisable {
+    optional stateType State = 1 [default = On];
+}
+message UnitControlRequestExecuteProfile {
+    optional string ProfileNo = 1;
+}
+message UnitControlRequestOutput {
+    optional int32 Port = 1 [default = 0];
+    optional outputStyleType Style = 2 [default = Normal];
+    optional stateType State = 3 [default = On];
+}
+message UnitControlRequestPoll {
+    optional pollSource Type = 1 [default = Gps];
+}
+enum outputStyleType {
+    Normal = 0;
+    Item1Shot = 1;
+    HalfHzFixedFreq = 2;
+    Item1HzFixedFreq = 3;
+    Item2HalfHzFixedFreq = 4;
+    Item5HzFixedFreq = 5;
+    Progressive1 = 6;
+    Progressive2 = 7;
+    Item1PulsePerSec = 8;
+    Item2PulsesPerSec = 9;
+    Item3PulsesPerSec = 10;
+    Item1of1Sec1Shot = 11;
+    Item2of1Sec1Shot = 12;
+}
+enum pollSource {
+    Gps = 0;
+    Gsm = 1;
+}
+enum stateType {
+    On = 0;
+    Off = 1;
+}

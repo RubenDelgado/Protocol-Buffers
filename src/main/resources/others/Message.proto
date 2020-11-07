@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package com.webmiddle.circulocorp.protocol;
+
+option java_package = "com.webmiddle.circulocorp.protocol.protos";
+option java_outer_classname = "MessageProtos";
+
+message Data {
+    optional string vin = 1;
+    required string longitude = 2;
+    required string latitude = 3;
+    optional string utcTimestamp = 4;
+}
